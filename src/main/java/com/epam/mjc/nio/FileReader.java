@@ -12,6 +12,10 @@ public class FileReader {
     public Profile getDataFromFile(File file) {
         String rawData = getRawData(file);
 
+        if (rawData != null) {
+            return ProfileParser.parse(rawData);
+        }
+
         return null;
     }
 
